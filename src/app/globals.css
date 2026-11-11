@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Direção unslop: folha de resposta corrigida. Rampa quente, um acento verde-tinta. */
+@theme {
+  --color-paper: #f7f4ee;
+  --color-card: #fdfbf7;
+  --color-raised: #efe9df;
+  --color-ink: #1f1b16;
+  --color-ink-2: #5e554a;
+  --color-ink-3: #675e52;
+  --color-line: rgb(31 27 22 / 0.1);
+  --color-accent: #1f6f50;
+  --color-accent-ink: #17573f;
+  --color-accent-soft: #e4efe8;
+  --color-danger: #b42318;
+  --color-danger-soft: #fbeae8;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-newsreader), Georgia, serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-feature-settings: "tnum" 0; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+/* Assinatura: anotação de margem (sublinhado verde de lápis). */
+.margin-mark { text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+/* Diagnóstico: o campo "Qual língua?" só aparece com "Outra" marcada (funciona sem JavaScript). */
+.native-other { display: none; }
+form:has(select[name="native"] option[value="other"]:checked) .native-other { display: block; }

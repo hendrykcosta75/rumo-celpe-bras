@@ -1,0 +1,1 @@
+ALTER TABLE "leads" ADD COLUMN "native_language_other" text;
